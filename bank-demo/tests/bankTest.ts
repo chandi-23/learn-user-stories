@@ -49,3 +49,13 @@ catch (error) {
     console.error("Test 4 Failed:");
 }
 
+console.log("Test 5: Depositing money of 500 into an account `1234567888`");
+try {
+    bank.depositMoney(1234567888, 500);
+    const balance = bank.getBalance(1234567888);
+    console.log("Deposit successful. New balance:", balance);
+} 
+catch (error) {
+    console.error("Test 4 Failed:");
+}
+

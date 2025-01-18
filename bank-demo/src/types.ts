@@ -8,6 +8,6 @@ export interface BankType {
     
     getBalance(accountNumber: number): number
 
-    
+    depositMoney(accountNumber: number, amount: number): void
 }
 
