@@ -13,8 +13,8 @@ This project implements a simple bank system in TypeScript. The system supports 
 - **`bank-demo/tests/bankTest.ts`**: Contains all the tests related to the methods in the bank class.
 
 ## Usage
-- ** npm install
-- ** run the tests: npx ts-node bank-demo/tests/bankTest.ts
+- ** `npm install`
+- ** run the tests: `npx ts-node bank-demo/tests/bankTest.ts`
 
 ## Features
 
