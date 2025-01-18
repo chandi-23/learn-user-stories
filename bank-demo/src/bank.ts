@@ -68,4 +68,21 @@ export class Bank implements BankType {
         account.balance += amount
         
     }
+
+    withdrawMoney(accountNumber: number, amount: number): void {
+    
+        if (amount <= 0) {
+            throw new Error('Withdrawal amount must be greater than zero.');
+        }
+    
+        const account = this.accounts.find((account)=> account.id===accountNumber)
+        if (!account) {
+            throw new Error('Account not found.');
+        }
+    
+        if (account.balance < amount) {
+            throw new Error('Insufficient Balance');
+        }
+        account.balance -= amount
+    }
 }

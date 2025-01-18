@@ -56,6 +56,28 @@ try {
     console.log("Deposit successful. New balance:", balance);
 } 
 catch (error) {
-    console.error("Test 4 Failed:");
+    console.error("Test 5 Failed:");
 }
 
+console.log("Test 6: Withdrawing  200 from an account `1234567888`");
+try {
+    bank.withdrawMoney(1234567888, 200);
+    const balance = bank.getBalance(1234567888);
+    console.log("Withdrawal successful. New balance:", balance);
+} 
+catch (error) {
+    console.error("Test 6 Failed:");
+}
+
+console.log("Test 7: Attempting to withdraw 1000 from '1234567888' (more than available)");
+try {
+    bank.withdrawMoney(1234567888, 1000);
+    console.error("Test 7 Failed: Overdraft allowed.");
+} 
+catch (error) {
+    if (error instanceof Error) {
+        console.log("Test 7 Passed:", error.message);
+    } else {
+        console.log("Test 7 Passed: Unknown error occurred.");
+    }
+}
