@@ -47,4 +47,15 @@ export class Bank implements BankType {
         this.accounts.push(newAccount);
         return newAccount
     }
+
+    getBalance(accountNumber: number): number {
+        const account = this.accounts.find((account)=> account.id===accountNumber)
+        if (!account) {
+            throw new Error('Account not found.');
+        }
+
+        return account.balance;
+    }
+
+    
 }

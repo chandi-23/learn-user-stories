@@ -36,3 +36,16 @@ try {
 catch(e) {
     console.log('Scenario 3 passed');
 }
+
+// see the available accounts
+console.log(bank)
+
+console.log("Test 4: get balance of the account `1234567888`");
+try {
+    const balance = bank.getBalance(1234567888);
+    console.log("Balance amount:", balance);
+} 
+catch (error) {
+    console.error("Test 4 Failed:");
+}
+
